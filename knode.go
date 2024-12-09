@@ -489,6 +489,8 @@ func ParseFromSlice(buf []byte) (n *Node, err *ParseError) {
 	return p.parse()
 }
 
+// ParseFromReader decodes a node from reader r.
+// The error is not guaranteed to be a [knode.ParseError]
 func ParseFromReader(r io.Reader) (n *Node, err error) {
 	var buf []byte
 	if buf, err = io.ReadAll(r); err != nil {
